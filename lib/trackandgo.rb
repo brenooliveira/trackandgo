@@ -1,5 +1,15 @@
-require "trackandgo/version"
+require 'yaml'
+
+require 'trackandgo/version'
+require 'trackandgo/utils/deep_symbolizable'
+require 'trackandgo/trackings'
 
 module Trackandgo
-  # Your code goes here...
+  class << self
+
+    def init
+      Trackings.load!("config/trackers.yml")
+    end
+
+  end
 end
