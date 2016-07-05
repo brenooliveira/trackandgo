@@ -6,6 +6,7 @@ describe Trackings do
       Trackings.load!(File.expand_path "spec/fixtures/trackers.yml")
     end
 
-    it { binding.pry ; expect(Trackings.signup[:first_data]).not_to be_nil }
+    it { expect(Trackings.signup[:first_data]).not_to be_nil }
+    it { expect(Trackings.signup[:first_data]).to eq "Dados básicos (E-mail e Senha)" }
   end
 end

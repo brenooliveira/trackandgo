@@ -1,14 +1,14 @@
 module Trackings
   extend self
 
-  @_settings = {}
-  attr_reader :_settings
+  @_trackings = {}
+  attr_reader :_trackings
 
   def load!(filename, options = {})
     newsets = ::YAML::load_file(filename).extend DeepSymbolizable
-    newsets.deep_symbolize
+    newsets = newsets.deep_symbolize
     newsets = newsets[options[:env].to_sym] if options[:env] && newsets[options[:env].to_sym]
-    deep_merge!(@_settings, newsets)
+    deep_merge!(@_trackings, newsets)
   end
 
   def deep_merge!(target, data)
@@ -18,7 +18,6 @@ module Trackings
   end
 
   def method_missing(name, *args, &block)
-    @_settings[name.to_sym] ||
-    fail(NoMethodError, "unknown configuration root #{name}", caller)
+    @_trackings[name] || fail(NoMethodError, "Unknown tracking for #{name}", caller)
   end
 end
