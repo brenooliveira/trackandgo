@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
-require File.expand_path 'lib/trackandgo'
+
+require "bundler/setup"
+
+require_relative '../lib/trackandgo'
 
 Trackandgo.init
