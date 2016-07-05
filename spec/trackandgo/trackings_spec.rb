@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Trackings do
-  context "shold loading trackers.yml" do
+  context "should loading trackers.yml" do
     before do
       Trackings.load!(File.expand_path "spec/fixtures/trackers.yml")
     end
