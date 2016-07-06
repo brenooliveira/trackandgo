@@ -8,7 +8,7 @@ require 'trackandgo/udp/server'
 
 module Trackandgo
 
-  @_settings = {
+  DEFAULTS_UDP = {
     UDP_HOST: '127.0.0.1',
     UDP_PORT: '3333'
   }
@@ -17,11 +17,15 @@ module Trackandgo
     Trackandgo.logger.info "========== Staring server =========="
     Trackings.load!("config/trackers.yml")
 
-    Trackandgo::UDP::Server.new(@_settings).start
+    Trackandgo::UDP::Server.new(DEFAULTS_UDP).start
   end
 
   def self.logger
     Trackandgo::Logging.logger
+  end
+
+  def self.logger=(log)
+    Trackandgo::Logging.logger = log
   end
 
 end
