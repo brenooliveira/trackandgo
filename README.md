@@ -1,6 +1,6 @@
 # Trackandgo
 
-[![Code Climate](https://codeclimate.com/github/brenooliveira/trackandgo/badges/gpa.svg)](https://codeclimate.com/github/brenooliveira/trackandgo) [![Build Status](https://travis-ci.org/brenooliveira/trackandgo.svg?branch=master)](https://travis-ci.org/brenooliveira/trackandgo) [![Code Climate](https://codeclimate.com/github/brenooliveira/trackandgo/badges/gpa.svg)](https://codeclimate.com/github/brenooliveira/trackandgo)
+[![Code Climate](https://codeclimate.com/github/brenooliveira/trackandgo/badges/gpa.svg)](https://codeclimate.com/github/brenooliveira/trackandgo) [![Build Status](https://travis-ci.org/brenooliveira/trackandgo.svg?branch=master)](https://travis-ci.org/brenooliveira/trackandgo) [![Test Coverage](https://codeclimate.com/github/brenooliveira/trackandgo/badges/coverage.svg)](https://codeclimate.com/github/brenooliveira/trackandgo/coverage)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/trackandgo`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -23,7 +23,9 @@ Or install it yourself as:
 
 ## Usage
 
-
+```
+  $ trackandgo -h
+```
 
 ## Development
 
@@ -33,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/trackandgo/fork )
+1. Fork it ( https://github.com/brenooliveira/trackandgo/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

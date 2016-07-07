@@ -9,7 +9,7 @@ module Trackandgo
       end
 
       def start
-        Trackandgo.logger.info " * UDP Server up"
+        Trackandgo.logger.info " * UDP Server up √"
         Socket.udp_server_loop(@params[:UDP_PORT]) do |msg, msg_src|
           Trackandgo.logger.info "UDP Receive: #{msg} :: #{msg_src.inspect}"
         end
