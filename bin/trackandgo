@@ -4,4 +4,14 @@ require "bundler/setup"
 
 require_relative '../lib/trackandgo'
 
-Trackandgo.init
+# Trackandgo.init
+
+begin
+  cli = Trackandgo::CLI.instance
+  cli.parse
+rescue => e
+  raise e if $DEBUG
+  STDERR.puts e.message
+  STDERR.puts e.backtrace.join("\n")
+  exit 1
+end

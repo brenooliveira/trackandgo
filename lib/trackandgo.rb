@@ -5,6 +5,7 @@ require 'trackandgo/logging'
 require 'trackandgo/utils/deep_symbolizable'
 require 'trackandgo/trackings'
 require 'trackandgo/udp/server'
+require 'trackandgo/cli'
 
 module Trackandgo
 
