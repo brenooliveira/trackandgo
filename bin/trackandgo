@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-
 require_relative '../lib/trackandgo'
 
-# Trackandgo.init
 
 begin
   cli = Trackandgo::CLI.instance
   cli.parse
+
+  Trackandgo.init
 rescue => e
   raise e if $DEBUG
   STDERR.puts e.message
