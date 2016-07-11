@@ -1,4 +1,6 @@
 require 'yaml'
+require 'concurrent'
+# require 'concurrent-edge'
 
 require 'trackandgo/version'
 require 'trackandgo/logging'
@@ -6,6 +8,7 @@ require 'trackandgo/utils/deep_symbolizable'
 require 'trackandgo/trackings'
 require 'trackandgo/udp/server'
 require 'trackandgo/cli'
+require 'trackandgo/redis_connection'
 
 module Trackandgo
 
