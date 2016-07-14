@@ -17,6 +17,13 @@ module Trackings
     target.merge! data, &merger
   end
 
+  def track?(key)
+    return false if key.nil? || key.empty?
+    keys = key.split '.'
+    # binding.pry
+    true
+  end
+
   def method_missing(name, *args, &block)
     @_trackings[name] || fail(NoMethodError, "Unknown tracking for #{name}", caller)
   end
