@@ -20,8 +20,7 @@ module Trackings
   def track?(key)
     return false if key.nil? || key.empty?
     keys = key.split '.'
-    # binding.pry
-    true
+    !@_trackings.dig(*keys.map(&:to_sym)).nil?
   end
 
   def method_missing(name, *args, &block)

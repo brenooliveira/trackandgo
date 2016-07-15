@@ -12,7 +12,7 @@ describe Trackings do
 
   context ".track?" do
     it { expect(Trackings).to be_track "signup.first_data" }
-    xit { expect(Trackings).not_to be_track "any.other.track" }
+    it { expect(Trackings).not_to be_track "any.other.track" }
     it { expect(Trackings).not_to be_track nil }
     it { expect(Trackings).not_to be_track "" }
   end
