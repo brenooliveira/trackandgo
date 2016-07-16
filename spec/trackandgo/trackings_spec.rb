@@ -15,5 +15,6 @@ describe Trackings do
     it { expect(Trackings).not_to be_track "any.other.track" }
     it { expect(Trackings).not_to be_track nil }
     it { expect(Trackings).not_to be_track "" }
+    it { expect(Trackings).not_to be_track "---" }
   end
 end

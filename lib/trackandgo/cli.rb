@@ -22,6 +22,14 @@ module Trackandgo
           puts "Trackandgo #{Trackandgo::VERSION}"
           die(0)
         end
+
+        opt.on '-P', '--port', "Port" do |arg|
+          opts[:port] = arg
+        end
+
+        opt.on '-f', '--file', 'File config' do |arg|
+          opts[:file_path] = arg
+        end
       end
 
       @parser.banner = "Usage: trackandgo [options]"
@@ -31,6 +39,7 @@ module Trackandgo
       end
 
       @parser.parse!(argv)
+      opts
     end
   end
 end

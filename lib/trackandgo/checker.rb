@@ -6,13 +6,12 @@ module Trackandgo
     end
 
     def check(key, operation = {})
-      # @pool.
+      return false if Trackings.track? key
     end
 
     def uncheck(key, operation = {})
+      return false if Trackings.track? key
     end
-
-
 
   end
 end

@@ -15,7 +15,7 @@ require 'trackandgo/redis_connection'
 
 module Trackandgo
   class << self
-    DEFAULTS_UDP = {
+    DEFAULTS = {
       UDP_HOST: '127.0.0.1',
       UDP_PORT: '3333'
     }
@@ -24,8 +24,17 @@ module Trackandgo
       Trackandgo.logger.info "========== Staring server =========="
       Trackings.load!("config/trackers.yml")
 
-      Trackandgo::UDP::Server.new(DEFAULTS_UDP).start
+      Trackandgo::UDP::Server.new(DEFAULTS).start
     end
+
+    def self.options
+      @options ||= DEFAULTS.dup
+    end
+
+    def self.options=(opts)
+      @options = opts
+    end
+
 
     def logger
       Trackandgo::Logging.logger
