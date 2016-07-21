@@ -18,7 +18,7 @@ module Trackandgo
     def parse_options(argv)
       opts = {}
       @parser = OptionParser.new do |opt|
-        opt.on '-V', '--version', "Print version and exit" do |arg|
+        opt.on '-V', '--version', "Print version and exit" do
           puts "Trackandgo #{Trackandgo::VERSION}"
           die(0)
         end

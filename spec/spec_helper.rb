@@ -7,3 +7,5 @@ if ENV['CODECLIMATE_REPO_TOKEN']
 end
 
 require File.expand_path 'lib/trackandgo'
+
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f}

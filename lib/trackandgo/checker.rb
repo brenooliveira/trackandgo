@@ -1,16 +1,19 @@
 module Trackandgo
   class Checker
 
-    def initialize
-      @pool = Trackandgo::RedisConnection.create
-    end
-
     def check(key, operation = {})
-      return false if Trackings.track? key
+      raise ArgumentError if key.nil?
+      return false unless Trackings.track? operation[:route]
+
+      Trackandgo.redis do |conn|
+        route = operation[:route].split('.')
+        hash = route.reverse.inject(true) { |a, n| { n => a } }
+        conn.set key, hash
+      end
     end
 
     def uncheck(key, operation = {})
-      return false if Trackings.track? key
+      return false if Trackings.track? operation[:route]
     end
 
   end
